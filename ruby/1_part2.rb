@@ -10,3 +10,11 @@ File.read('./puzzle_input/1.txt')
     LIST_2.push(data[1].to_i)
   end
 
+LIST_2_TALLY = LIST_2.tally
+score = 0
+
+LIST_1.each_with_index do |num|
+  score += num * (LIST_2_TALLY[num] || 0)
+end
+
+puts score
